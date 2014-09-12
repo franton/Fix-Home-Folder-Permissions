@@ -2,12 +2,12 @@
 
 # Script to reset current user's home folder permissions to default
 
-# Author      : r.purves@arts.ac.uk
+# Author      : contact@richard-purves.com
 # Version 1.0 : 27-03-2013 - Initial Version
 
 # Current local admin account name
 
-localadmin="uadmin"
+localadmin="admin"
 
 # Read current user into $i variable
 
@@ -18,7 +18,7 @@ i=$( echo $3 )
 if [ "$i" == "$localadmin" ];
 then
 
-   echo "Processing uadmin account"
+   echo "Processing admin account"
 
    chown -R $i:staff /Users/$i
    chmod 755 /Users/$i
@@ -42,7 +42,7 @@ then
 
    echo "Processing" $i
 
-   chown -R $i:"ARTSLOCAL\Domain Users" /Users/$i
+   chown -R $i:"DOMAIN\Domain Users" /Users/$i
    chmod 755 /Users/$i
    chmod -R 700 /Users/$i/Desktop/
    chmod -R 700 /Users/$i/Documents/
